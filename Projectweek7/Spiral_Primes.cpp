@@ -3,7 +3,7 @@
 
 #define N 1000000
 
-int8_t sieve[N];
+int sieve[N];
 void init_sieve()
 {
 	int i, j;
@@ -21,7 +21,7 @@ int is_prime(int n)
 	int p;
 	if (n < N)
 		return sieve[n];
-	for (p = 2; p * p <= n; ++p)
+	for (p = 2; p * p <= n; p++)
 		if (sieve[p] && n % p == 0)
 			return 0;
 	return 1;
